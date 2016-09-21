@@ -1,0 +1,93 @@
+<!--简易留言板-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            font-family: 微软雅黑;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main{
+            margin: 0 auto;
+        }
+
+        .mess
+        {
+            margin-top: 15px;
+        }
+
+        textarea{
+            width:90%;;
+            height:80px;
+            resize: none;
+            border-radius: 20px;
+            padding: 15px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        textarea:focus{
+            outline: none;
+        }
+
+        button{
+            width: 100px;
+            height:30px;
+            background: #272822;
+            font-weight:bold;
+            color: #ffffff;
+
+        }
+
+        button:focus{
+            outline:none;
+        }
+
+        .show{
+            margin-top: 20px;
+            border: 2px solid #272822;
+            border-radius: 10px;
+            height:100px;
+        }
+
+        .close{
+            float: right;
+            margin-right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <h1>留言板</h1>
+    <div class="mess">
+        <textarea></textarea>
+        <br>
+        <button>OK</button>
+    </div>
+</div>
+
+</body>
+<script>
+    $('textarea').focus(function () {
+        this.value='';
+    })
+    $('button').click(function () {
+        val=$('textarea').val();
+        str="<div class='show'>";
+        str+="<div class='close'>&times;</div>"
+        str+=val;
+        str+="</div>";
+        $('.main').append(str);
+    })    
+    $('.close').live('click',function () {
+        $(this).parent().hide(500);
+    })
+</script>
+</html>

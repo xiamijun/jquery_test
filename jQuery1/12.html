@@ -1,0 +1,51 @@
+<!--鼠标右键菜单-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        ul{
+            width: 100px;
+            height: 150px;
+            background: #cccccc;
+            border-radius: 10px;
+            position: absolute;
+            display: none;
+        }
+
+        ul li{
+            text-align: center;
+            line-height: 20px;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>菜单</li>
+    <li>菜单</li>
+    <li>菜单</li>
+    <li>菜单</li>
+    <li>菜单</li>
+    <li>菜单</li>
+</ul>
+</body>
+<script>
+    $(document).contextmenu(function (event) {
+        x=event.clientX;
+        y=event.clientY;
+        code=event.button;
+        if(code==2){
+            $('ul').show().css({'left':x+'px','top':y+'px'})
+            return false;
+        }
+    })
+</script>
+</html>

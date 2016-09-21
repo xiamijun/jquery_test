@@ -1,0 +1,56 @@
+<!--鼠标拖拽-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        #div1{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 256px;
+            width: 256px;
+            height:256px;
+            background: #cccccc;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <img src="a.jpg">
+</div>
+</body>
+<script>
+    function drag(obj) {
+        obj.bind('mousedown',start);
+
+        function start(event) {
+            deltaX=event.clientX-obj.offset.left;
+            deltaY=event.clientY-obj.offset.top;
+
+            $(document).bind('mousemove',move);
+            $(document).bind('mouseup',stop);
+            return false;
+        }
+
+        function move(event) {
+            obj.css({
+                'left':(event.clientX-deltaX)+'px',
+                'top':(event.clientY-deltaY)+'px'
+            });
+            return false;
+        }
+        
+        function stop() {
+            $(document).unbind('mousemove',move);
+            $(document).unbind('mouseup',stop);
+        }
+    }
+
+    obj=$('#div1');
+    drag(obj);
+</script>
+</html>

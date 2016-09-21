@@ -1,0 +1,53 @@
+<!--offset-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .shop{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            box-shadow: 0px 0px 5px 5px #cccccc;
+            float: left;
+            margin-left: 30px;
+        }
+
+        .img{
+            position: absolute;
+            border: 10px;
+            border-radius: 256px;
+            overflow: hidden;
+            display: none;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+        <img src="b.jpeg" width="100%">
+    </div>
+    <div class="shop">
+        <img src="a.jpg" width="100%">
+    </div>
+    <div class="shop">
+        <img src="a.jpg" width="100%">
+    </div>
+    <div class="shop">
+        <img src="a.jpg" width="100%">
+    </div>
+    <div class="shop">
+        <img src="a.jpg" width="100%">
+    </div>
+</body>
+<script>
+    $('.shop').mouseenter(function () {
+        x=$(this).offset().left;
+        y=$(this).offset().top+300+10;
+        $('.img').show().css({'top':y+'px','left':x+'px'})
+    })
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!--点赞-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <img src="a.jpg">
+    <br>
+    <button>点赞（<span>50</span>）</button>
+</div>
+</body>
+<script>
+    $('button').one('click',function () {
+        val=parseInt($('span').html())+1;
+        $('span').html(val);
+        $(this).css({'background':'#f00','color':'#fff'})
+    })
+</script>
+</html>

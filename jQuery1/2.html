@@ -1,0 +1,26 @@
+<!--单击标题切换内容-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+<h1>linux</h1>
+<p>linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!</p>
+
+<h1>linux</h1>
+<p>linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!</p>
+
+<h1>linux</h1>
+<p>linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!</p>
+<h1>linux</h1>
+<p>linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!linux very well!</p>
+</body>
+<script>
+    $('h1').click(function () {
+        $(this).next().toggle(1000)
+    })
+</script>
+</html>
